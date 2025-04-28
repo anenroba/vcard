@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi vCard</title>
+</head>
+<body>
+<script>
+  // Crear el contenido de la vCard
+  const vCardData = `BEGIN:VCARD
+VERSION:3.0
+N:Apellido;Nombre
+FN:Andres Rodriguez
+ORG:Oben Media
+TEL;TYPE=work,voice:+56977778989
+EMAIL:contacto@obenmedia.cl
+URL:https://obenmedia.cl
+END:VCARD`;
+
+  // Crear un blob con el contenido
+  const blob = new Blob([vCardData], { type: 'text/vcard' });
+  const url = URL.createObjectURL(blob);
+
+  // Crear un link temporal para descargar
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'contacto.vcf'; // Nombre del archivo
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+</script>
+</body>
+</html>
