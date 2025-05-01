@@ -1,33 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi vCard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enlaces de Mi Agencia</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" />
 </head>
-<body>
-<script>
-  // Crear el contenido de la vCard
-  const vCardData = `BEGIN:VCARD
-VERSION:3.0
-N:Rodriguez;Andres
-FN:Andres Rodriguez
-ORG:Oben Media
-TEL;TYPE=work,voice:+56977778989
-EMAIL:contacto@obenmedia.cl
-URL:https://obenmedia.cl
-END:VCARD`;
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <main class="max-w-md mx-auto mt-10 px-6 text-center">
+    <img src="/obenlogo.png" alt="Logo" class="w-24 h-24 mx-auto mb-4 rounded-full shadow" />
+    <h1 class="text-2xl font-bold mb-2">Conecta con Nosotros</h1>
+    <p class="mb-6 text-gray-600">Accede a todos nuestros canales desde un solo lugar</p>
 
-  // Crear un blob con el contenido
-  const blob = new Blob([vCardData], { type: 'text/vcard' });
-  const url = URL.createObjectURL(blob);
+    <div class="space-y-4">
+      <a href="https://instagram.com/oben.media" target="_blank" class="block w-full bg-pink-500 text-white py-3 rounded-lg font-semibold shadow hover:bg-pink-600 transition">📸 Síguenos en Instagram</a>
 
-  // Crear un link temporal para descargar
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'contacto.vcf'; // Nombre del archivo
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-</script>
+      <a href="https://wa.me/56977778989" target="_blank" class="block w-full bg-green-600 text-white py-3 rounded-lg font-semibold shadow hover:bg-green-700 transition">💬 Escríbenos por WhatsApp</a>
+
+      <a href="https://obenmedia.cl" target="_blank" class="block w-full bg-blue-600 text-white py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition">🌐 Visita nuestro sitio web</a>
+    </div>
+
+    <footer class="mt-10 text-xs text-gray-500">
+      © 2025 Oben Media. Todos los derechos reservados.
+    </footer>
+  </main>
 </body>
 </html>
